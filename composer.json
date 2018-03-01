@@ -1,0 +1,30 @@
+{
+  "name": "johnnymcweed/luya-module-archive",
+  "description": "The archive module will provide you a basic archive system.",
+  "type": "luya-module",
+  "minimum-stability": "stable",
+  "keywords": ["php", "yii", "yii2", "luya", "luya-module", "module", "archive"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alexander Schmid",
+      "email": "alex.schmid@stud.unibas.ch"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/JohnnyMcWeed/luya-module-archive/issues"
+  },
+  "autoload" : {
+    "psr-4" : {
+      "johnnymcweed\\archive\\" : "src/"
+    }
+  },
+  "require": {
+    "luyadev/luya-core": "~1.0.0",
+    "johnnymcweed/luya-module-event":"dev-master",
+    "johnnymcweed/luya-module-place":"dev-master"
+  },
+  "extra": {
+
+  }
+}
