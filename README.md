@@ -1,4 +1,4 @@
-# Event Module
+# Archive Module
  
 The archive module gives the possibility to add an object archive to a Luya application. Therefore articles can be added in the backend, which get shown on the frontend afterwards.
  
