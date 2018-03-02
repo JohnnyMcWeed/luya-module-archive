@@ -3,6 +3,7 @@
 namespace johnnymcweed\archive\models;
 
 use johnnymcweed\archive\admin\Module;
+use johnnymcweed\person\models\Person;
 use johnnymcweed\place\models\Place;
 
 use Yii;
@@ -118,7 +119,12 @@ class Article extends NgRestModel
                 'valueField' => 'id',
                 'labelField' => 'title'
             ],
-            'owner_id' => 'number',
+            'owner_id' => [
+                'selectModel',
+                'modelClass' => Person::class,
+                'valueField' => 'id',
+                'labelField' => 'title'
+            ],
             'timestamp_create' => 'datetime',
             'timestamp_update' => 'date',
         ];
