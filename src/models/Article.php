@@ -123,7 +123,9 @@ class Article extends NgRestModel
                 'selectModel',
                 'modelClass' => Person::class,
                 'valueField' => 'id',
-                'labelField' => 'title'
+                'labelField' => function($model) {
+                    return $model->first_name . ' ' . $model->last_name;
+                }
             ],
             'timestamp_create' => 'datetime',
             'timestamp_update' => 'date',
