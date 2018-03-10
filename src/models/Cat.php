@@ -77,9 +77,6 @@ class Cat extends NgRestModel
         if (empty($this->timestamp_create)) {
             $this->timestamp_create = time();
         }
-        if (empty($this->timestamp_display_from)) {
-            $this->timestamp_display_from = time();
-        }
     }
 
     /**
