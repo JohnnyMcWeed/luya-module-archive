@@ -86,6 +86,7 @@ class Cat extends NgRestModel
     {
         return [
             'title' => Module::t('Title'),
+            'signature' => Module::t('Signature'),
             'text' => Module::t('Text'),
             'image_id' => Module::t('Image'),
             'image_list' => Module::t('Images'),
@@ -101,7 +102,7 @@ class Cat extends NgRestModel
     public function rules()
     {
         return [
-            [['title', 'text', 'image_list', 'file_list'], 'string'],
+            [['title', 'signature', 'text', 'image_list', 'file_list'], 'string'],
             [['create_user_id', 'timestamp_create', 'timestamp_update'], 'integer'],
             [['image_id'], 'safe'],
         ];
@@ -112,7 +113,7 @@ class Cat extends NgRestModel
      */
     public function genericSearchFields()
     {
-        return ['title', 'text'];
+        return ['title', 'signature', 'text'];
     }
 
     /**
@@ -122,6 +123,7 @@ class Cat extends NgRestModel
     {
         return [
             'title' => 'text',
+            'signature' => 'text',
             'text' => 'textarea',
             'image_id' => 'image',
             'image_list' => 'imageArray',
@@ -149,8 +151,8 @@ class Cat extends NgRestModel
     public function ngRestScopes()
     {
         return [
-            ['list', ['title']],
-            [['create', 'update'], ['title', 'text', 'image_id', 'image_list', 'file_list', 'timestamp_create', 'timestamp_update']],
+            ['list', ['title', 'signature']],
+            [['create', 'update'], ['title',, 'signature' 'text', 'image_id', 'image_list', 'file_list', 'timestamp_create', 'timestamp_update']],
             ['delete', false],
         ];
     }

@@ -60,6 +60,7 @@ class Article extends NgRestModel
     {
         return [
             'title' => Module::t('Title'),
+            'signature' => Module::t('Signature'),
             'text' => Module::t('Text'),
             'place_id' => Module::t('Place'),
             'amount' => Module::t('Amount'),
@@ -79,7 +80,7 @@ class Article extends NgRestModel
     public function rules()
     {
         return [
-            [['title', 'text', 'image_list', 'file_list'], 'string'],
+            [['title', 'text', 'image_list', 'file_list', 'signature'], 'string'],
             [['place_id', 'cat_id', 'owner_id',
                 'timestamp_create', 'timestamp_update'], 'integer'],
             [['amount'], 'number'],
@@ -92,7 +93,7 @@ class Article extends NgRestModel
      */
     public function genericSearchFields()
     {
-        return ['title', 'text', 'image_list', 'file_list'];
+        return ['title', 'signature', 'text', 'image_list', 'file_list'];
     }
 
     /**
@@ -103,6 +104,7 @@ class Article extends NgRestModel
         return [
             'title' => 'text',
             'text' => 'textarea',
+            'signature' => 'text',
             'place_id' => [
                 'selectModel',
                 'modelClass' => Place::class,
@@ -151,8 +153,8 @@ class Article extends NgRestModel
     public function ngRestScopes()
     {
         return [
-            ['list', ['title', 'amount', 'place_id', 'owner_id']],
-            [['create', 'update'], ['title', 'text', 'place_id', 'amount',
+            ['list', ['title', 'signature', 'amount', 'place_id', 'owner_id']],
+            [['create', 'update'], ['title', 'signature', 'text', 'place_id', 'amount',
                 'image_id', 'image_list', 'file_list', 'cat_id', 'owner_id', 'timestamp_create', 'timestamp_update']],
             ['delete', false],
         ];
