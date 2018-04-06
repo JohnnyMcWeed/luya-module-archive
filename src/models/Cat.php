@@ -152,7 +152,7 @@ class Cat extends NgRestModel
     {
         return [
             ['list', ['title', 'signature']],
-            [['create', 'update'], ['title',, 'signature' 'text', 'image_id', 'image_list', 'file_list', 'timestamp_create', 'timestamp_update']],
+            [['create', 'update'], ['title', 'signature', 'text', 'image_id', 'image_list', 'file_list', 'timestamp_create', 'timestamp_update']],
             ['delete', false],
         ];
     }
